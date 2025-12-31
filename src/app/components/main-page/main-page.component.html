@@ -1,0 +1,118 @@
+<app-header></app-header>
+<main>
+  <section class="hero">
+    <div class="hero__image">
+      <img ngSrc="../assets/images/about-me1.jpeg" alt="Personal image" height="1335" width="1080" priority/>
+    </div>
+    <div class="section__text">
+      @for (paragraph of intro()?.description; track paragraph.id) {
+        <p [innerHTML]="paragraph"></p>
+        <br>
+      }
+      <a [href]="contactInfos()?.email">
+        <p-button [label]="intro()?.consultationButton" severity="primary"></p-button>
+      </a>
+    </div>
+  </section>
+
+  <section class="socials-intro">
+    <div class="socials">
+      <p-button icon="pi pi-inbox" [rounded]="true" severity="secondary"
+                (onClick)="window.open(contactInfos()?.email)"/>
+      <p-button icon="pi pi-whatsapp" [rounded]="true" severity="secondary"
+                (onClick)="window.open(contactInfos()?.whatsup)"/>
+      <p-button icon="pi pi-instagram" [rounded]="true" severity="secondary"
+                (onClick)="window.open(contactInfos()?.instagram)"/>
+    </div>
+
+    <div class="wise-thought">
+      <h1>{{ intro()?.wiseThought }}</h1>
+    </div>
+  </section>
+
+  <section id="about" class="about-me">
+    <div class="section__text">
+      <h1>{{ about().aboutMe }}</h1>
+      <div class="subsection">
+        <h3 [innerText]="about().aboutMeFirst"></h3>
+        <p [innerText]="about().aboutMeFirstDesc"></p>
+      </div>
+      <div class="subsection">
+        <h3 [innerText]="about().aboutMeSecond"></h3>
+        <p [innerText]="about().aboutMeSecondDesc"></p>
+      </div>
+
+      <div class="subsection">
+        <h3 [innerText]="about().academicVisibility"></h3>
+        <div class="socials">
+          <a [href]="about().linkedin.link" target="_blank">
+            <img [ngSrc]="about().linkedin.icon" [alt]="about().linkedin.alt" width="32" height="32"/>
+            <span [innerText]="about().linkedin.title"></span>
+          </a>
+          <a [href]="about().researchGate.link" target="_blank">
+            <img [ngSrc]="about().researchGate.icon" [alt]="about().researchGate.alt" width="32" height="32"/>
+            <span [innerText]="about().researchGate.title"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="simple-section diplomas">
+    <h1 [innerText]="titles().diplomas"></h1>
+    <app-carousel [images]="diplomaImages"></app-carousel>
+  </section>
+
+  <div class="full-width">
+    <section class="simple-section enum-section">
+      <h1 [innerText]="titles().explanation"></h1>
+      <div class="teasers">
+        @for (item of formatsInteraction(); track item) {
+          <app-fancy-card
+            [title]="item.title"
+            [image]="item.image"
+          ></app-fancy-card>
+        }
+      </div>
+    </section>
+  </div>
+
+  <section class="simple-section">
+    <h1 [innerText]="titles().services"></h1>
+    <div class="services">
+      @for (service of services(); track service) {
+        <app-teaser [title]="service.title" [image]="service.image" [description]="service.description!"></app-teaser>
+      }
+    </div>
+  </section>
+
+  <div id="topics" class="full-width">
+    <section class="simple-section topics">
+      <h1 [innerText]="titles().topics"></h1>
+      <div class="topics-about">
+        @for (topic of topicsAbout(); track topic) {
+          <app-card [text]="topic"></app-card>
+        }
+      </div>
+    </section>
+  </div>
+
+  <section id="qa" class="simple-section qa">
+    <h1 [innerText]="titles().questions"></h1>
+    <div class="qa-content">
+      <p-accordion [value]="0">
+        @for (tab of questionsAnswers(); track tab; let i = $index) {
+          <app-question-answer
+            [questionNumber]="i + 1"
+            [question]="tab.question"
+            [answer]="tab.answer"
+          ></app-question-answer>
+        }
+      </p-accordion>
+    </div>
+
+    <app-ask-question></app-ask-question>
+  </section>
+</main>
+
+<app-footer></app-footer>

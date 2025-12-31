@@ -1,0 +1,8 @@
+<p-accordion-panel [value]="questionNumber()">
+  <p-accordion-header>{{ question() }}</p-accordion-header>
+  <p-accordion-content>
+    @for (answer of answer(); track answer) {
+      <p [innerText]="answer"></p>
+    }
+  </p-accordion-content>
+</p-accordion-panel>

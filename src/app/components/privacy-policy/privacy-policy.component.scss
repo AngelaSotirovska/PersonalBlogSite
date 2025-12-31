@@ -1,0 +1,17 @@
+@use '../../../styles' as *;
+
+:host {
+  p {
+    text-indent: 2em;
+  }
+
+  .go-back {
+    margin: 1.5rem 0;
+    display: flex;
+    gap: 0.5rem;
+
+    a, i:before {
+      color: rgb(96, 96, 96);
+    }
+  }
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "title": "50 минути",
+    "description": "Советодавна/коучинг сесија преку допишување",
+    "image": {
+      "src": "assets/images/formats1.jpg",
+      "title": "Test"
+    }
+  },
+  {
+    "title": "50 минути",
+    "description": "Советодавна/коучинг сесија преку аудио повик",
+    "image": {
+      "src": "assets/images/formats2.jpg",
+      "title": "Test"
+    }
+  },
+  {
+    "title": "50 минути",
+    "description": "Советодавна/коучинг сесија преку видео повик",
+    "image": {
+      "src": "assets/images/formats3.jpg",
+      "title": "Test"
+    }
+  },
+  {
+    "title": "80 минути",
+    "description": "Сесија со Метафорички асоцијативни карти (МАК) преку видео повик",
+    "image": {
+      "src": "assets/images/formats4.jpg",
+      "title": "Test"
+    }
+  }
+]

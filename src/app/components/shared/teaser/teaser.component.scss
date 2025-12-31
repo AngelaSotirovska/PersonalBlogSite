@@ -1,0 +1,44 @@
+@use '../../../../styles' as *;
+
+:host {
+  .teaser-card {
+    position: relative;
+    height: 270px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+    overflow: hidden;
+
+    @media (min-width: $breakpoint-sm) {
+      height: 330px;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      height: 420px;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      padding: 24px;
+      background: rgba(0, 0, 0, 0.45);
+      color: $white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+
+      h3 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        opacity: 0.95;
+      }
+    }
+  }
+}

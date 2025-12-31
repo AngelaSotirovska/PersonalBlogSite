@@ -1,0 +1,55 @@
+<header class="site-header">
+  <div class="top-menu" [class.full-menu]="!fullMenu()">
+    @if (fullMenu()) {
+      <input id="nav-toggle" class="nav-toggle" type="checkbox"/>
+      <label for="nav-toggle" class="hamburger" aria-label="Open menu">
+        <div class="burger-menu" (click)="toggle()" role="button" tabindex="0" (keydown.enter)="toggle()"
+             (keydown.space)="toggle()" aria-label="Menu toggle">
+          <i class="pi pi-bars" [class.visible]="!menuOpen"></i>
+          <i class="pi pi-times" [class.visible]="menuOpen"></i>
+        </div>
+      </label>
+
+      <nav class="nav" role="navigation" aria-label="Primary">
+        <ng-container *ngTemplateOutlet="menuItems"></ng-container>
+      </nav>
+    }
+
+    <div class="logo">
+      <a href="#" aria-label="Home">
+        <span>ПСИХОЛОГ</span>
+        <span class="separate">Александра</span>
+        <span class="separate">Богдановска</span>
+      </a>
+    </div>
+
+    @if (fullMenu()) {
+      <ng-container *ngTemplateOutlet="socialsLinks"></ng-container>
+    }
+  </div>
+</header>
+
+@if (menuOpen) {
+  <div class="mobile-menu-overlay">
+    <nav>
+      <ng-container *ngTemplateOutlet="menuItems"></ng-container>
+    </nav>
+    <ng-container *ngTemplateOutlet="socialsLinks"></ng-container>
+  </div>
+}
+
+<ng-template #menuItems>
+  <ul class="nav__list">
+    <li class="nav__item"><a class="nav__link" href="#about">За мене</a></li>
+    <li class="nav__item nav__item"><a class="nav__link" href="#topics">Теми</a></li>
+    <li class="nav__item"><a class="nav__link" href="#qa">Прашања</a></li>
+  </ul>
+</ng-template>
+
+<ng-template #socialsLinks>
+  <div class="socials">
+    <a [href]="contactInfos()?.email"><i class="pi pi-inbox"></i></a>
+    <a [href]="contactInfos()?.whatsup" target="_blank"><i class="pi pi-whatsapp"></i></a>
+    <a [href]="contactInfos()?.instagram" target="_blank"><i class="pi pi-instagram"></i></a>
+  </div>
+</ng-template>

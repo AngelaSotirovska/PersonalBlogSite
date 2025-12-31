@@ -1,0 +1,21 @@
+<div class="carousel">
+  <p-button class="carousel-actions" icon="pi pi-angle-left" [rounded]="true" (onClick)="next()" />
+
+  <div class="carousel-container">
+    <img [src]="images()[currentIndex]" alt="Carousel image" class="carousel-image" />
+  </div>
+
+  <p-button class="carousel-actions" icon="pi pi-angle-right" [rounded]="true" (onClick)="prev()" />
+</div>
+
+<div class="dots-container">
+  <p-button icon="pi pi-angle-left" [rounded]="true" (onClick)="next()" />
+  @for (item of images(); track item; let i = $index) {
+    <span
+      (click)="goToSlide(i)"
+      [class.active]="i === currentIndex"
+      class="dot"
+    ></span>
+  }
+  <p-button icon="pi pi-angle-right" [rounded]="true" (onClick)="prev()" />
+</div>

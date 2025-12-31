@@ -1,0 +1,11 @@
+<p-toast></p-toast>
+
+@if (showScrollTopButton) {
+  <p-button
+    icon="pi pi-angle-double-up"
+    class="back-to-top"
+    (click)="scrollToTop($event)">
+  </p-button>
+}
+
+<router-outlet/>

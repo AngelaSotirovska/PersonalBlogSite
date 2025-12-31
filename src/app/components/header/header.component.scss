@@ -1,0 +1,240 @@
+@use '../../../styles' as *;
+
+:host {
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: $white;
+    border-bottom: 1px solid $border;
+
+    .top-menu {
+      width: 80%;
+      margin: auto;
+      height: $header-h;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      gap: $gap-sm;
+
+      @media (min-width: $breakpoint-sm) {
+        justify-content: space-between;
+        gap: $gap-lg;
+      }
+
+      &.full-menu {
+        justify-content: center;
+      }
+    }
+
+    .logo {
+      a {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $black;
+        font-weight: normal;
+        letter-spacing: 5px;
+        font-size: 1.06rem;
+        text-align: center;
+
+        span {
+          display: block;
+        }
+
+        .separate {
+          color: rgb(96, 96, 96);
+        }
+
+        @media (min-width: $breakpoint-sm) {
+          font-size: 0.8rem;
+          letter-spacing: 3px;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+          font-size: 1.06rem;
+          letter-spacing: 5px;
+        }
+      }
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      @media (min-width: $breakpoint-sm) {
+        margin-left: auto;
+      }
+    }
+
+    .socials {
+      display: none;
+
+      i {
+        font-size: 1.2rem;
+      }
+
+      @media (min-width: $breakpoint-sm) {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+        cursor: pointer;
+      }
+    }
+
+    @media (min-width: $breakpoint-sm) {
+      .nav,
+      .logo,
+      .socials {
+        width: 30%;
+      }
+    }
+  }
+
+  .nav__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+
+    @media (min-width: $breakpoint-sm) {
+      font-size: 0.8rem;
+      gap: 10px;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 1rem;
+      gap: 28px;
+    }
+  }
+
+  .nav__link {
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem 0;
+    text-decoration: none;
+    color: $black;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 0.125rem;
+      background: currentColor;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s ease;
+      opacity: 0.9;
+    }
+
+    &:hover::after,
+    &.is-active::after {
+      transform: scaleX(1);
+    }
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    user-select: none;
+
+    @media (min-width: $breakpoint-sm) {
+      display: none;
+    }
+  }
+
+  .burger-menu {
+    position: relative;
+    display: flex;
+    cursor: pointer;
+
+    i {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.5rem;
+      color: #333;
+      opacity: 0;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      pointer-events: none;
+
+      &.visible {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    .nav {
+      display: none;
+      background: $white;
+      border-top: 1px solid $border;
+      transform: translateY(-120%);
+      transition: transform 0.2s ease;
+
+      &__list {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px;
+      }
+
+      &__link {
+        padding: 12px 8px;
+      }
+    }
+  }
+
+  .mobile-menu-overlay {
+    position: fixed;
+    top: $header-h;
+    left: 0;
+    width: 100%;
+    height: calc(100% - $header-h);
+    padding: 2rem;
+    background-color: $white;
+    z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+
+    animation: fadeSlideIn 0.3s ease-out;
+
+    @media (min-width: $breakpoint-sm) {
+      display: none;
+    }
+
+    .socials {
+      display: flex;
+      gap: 1rem;
+
+      i {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  @keyframes fadeSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

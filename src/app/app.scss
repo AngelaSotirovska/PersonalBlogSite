@@ -1,0 +1,29 @@
+@use '../styles' as *;
+
+:host {
+  ::ng-deep {
+    .back-to-top {
+      position: fixed;
+      z-index: 1000;
+      bottom: 2rem;
+      right: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-weight: bold;
+
+      button {
+        padding: 0;
+
+        span {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .back-to-top .p-button-label {
+      margin-left: 0.3rem;
+    }
+  }
+}

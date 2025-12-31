@@ -1,0 +1,45 @@
+:host {
+  footer {
+    background-color: var(--p-primary-color);
+    padding: 2rem 1rem;
+    text-align: center;
+    color: #555;
+
+    .footer-content {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .footer-text {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    .footer-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0;
+      display: inline-flex;
+      gap: 1.5rem;
+
+      a {
+        text-decoration: none;
+        color: #555;
+        font-size: 0.9rem;
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
