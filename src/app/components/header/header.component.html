@@ -40,9 +40,9 @@
 
 <ng-template #menuItems>
   <ul class="nav__list">
-    <li class="nav__item"><a class="nav__link" href="#about">За мене</a></li>
-    <li class="nav__item nav__item"><a class="nav__link" href="#topics">Теми</a></li>
-    <li class="nav__item"><a class="nav__link" href="#qa">Прашања</a></li>
+    <li class="nav__item"><a class="nav__link" href="#about" (click)="toggle()">За мене</a></li>
+    <li class="nav__item nav__item"><a class="nav__link" href="#topics" (click)="toggle()">Теми</a></li>
+    <li class="nav__item"><a class="nav__link" href="#qa" (click)="toggle()">Прашања</a></li>
   </ul>
 </ng-template>
 

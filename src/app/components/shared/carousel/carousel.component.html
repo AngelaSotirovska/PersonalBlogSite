@@ -2,7 +2,7 @@
   <p-button class="carousel-actions" icon="pi pi-angle-left" [rounded]="true" (onClick)="next()" />
 
   <div class="carousel-container">
-    <img [src]="images()[currentIndex]" alt="Carousel image" class="carousel-image" />
+    <img [src]="images()[currentIndex]" loading="lazy" alt="Carousel image" class="carousel-image" />
   </div>
 
   <p-button class="carousel-actions" icon="pi pi-angle-right" [rounded]="true" (onClick)="prev()" />

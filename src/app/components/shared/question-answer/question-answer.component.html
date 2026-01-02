@@ -1,7 +1,7 @@
 <p-accordion-panel [value]="questionNumber()">
   <p-accordion-header>{{ question() }}</p-accordion-header>
   <p-accordion-content>
-    @for (answer of answer(); track answer) {
+    @for (answer of answer(); track $index) {
       <p [innerText]="answer"></p>
     }
   </p-accordion-content>

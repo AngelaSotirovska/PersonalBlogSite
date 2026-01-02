@@ -1,7 +1,7 @@
 <div class="card">
   @if (text()) {
     <h2 class="card-text">
-      @for (item of text()!.split('\n'); track item) {
+      @for (item of text()!.split('\n'); track $index) {
         <ng-container>{{ item }}</ng-container>
       }
     </h2>
