@@ -12,6 +12,7 @@ export interface ContactInfo {
   email: string;
   whatsup: string;
   instagram: string;
+  razgovormk: string;
 }
 
 export interface DisplayItem {

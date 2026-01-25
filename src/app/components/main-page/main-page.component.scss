@@ -67,6 +67,7 @@
 
       ::ng-deep p-button .p-button-label {
         text-transform: uppercase;
+        word-break: normal;
       }
     }
   }
@@ -90,6 +91,7 @@
       width: 100%;
       justify-content: center;
       font-style: italic;
+      word-break: normal;
 
       h1 {
         text-align: center;
