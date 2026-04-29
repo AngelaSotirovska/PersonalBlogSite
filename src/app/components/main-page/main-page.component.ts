@@ -69,11 +69,11 @@ export class MainPageComponent {
     );
 
   protected readonly diplomaImages = [
-    'assets/images/1 - Додипломски_page-0001.jpg',
-    'assets/images/2 - магистерски оригинаол_page-0001.jpg',
-    'assets/images/merged.jpg',
-    'assets/images/4 - Коучинг - сертификација_page-0001.jpg',
-    'assets/images/5 - сајентифик ачивментс_page-0001.jpg',
+    'assets/images/1 - diploma.webp',
+    'assets/images/2 - diploma.webp',
+    'assets/images/3 - diploma.webp',
+    'assets/images/4 - diploma.webp',
+    'assets/images/5 - diploma.webp',
   ];
 
   protected readonly window = window;
