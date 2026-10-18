@@ -3,32 +3,28 @@
     "title": "<b>10%</b> од наплатата за сесијата се донира за <b>хуманитарни цели</b>",
     "description": "",
     "image": {
-      "src": "assets/images/1 - charity.webp",
-      "title": "Test"
+      "src": "assets/images/1 - charity.webp"
     }
   },
   {
     "title": "Се стекнав со <b>странско образование</b> во советодавна психологија со обука за методи од <b>различни психолошки школи</b>",
     "description": "",
     "image": {
-      "src": "assets/images/2 - foreign education.webp",
-      "title": "Test"
+      "src": "assets/images/2 - foreign education.webp"
     }
   },
   {
     "title": "Имам две и пол години советодавно <b>искуство</b> со клиенти од <b>различен културолошки бекраунд</b>",
     "description": "",
     "image": {
-      "src": "assets/images/3 - different backgound.webp",
-      "title": "Test"
+      "src": "assets/images/3 - different backgound.webp"
     }
   },
   {
     "title": "Обезбедувам <b>анонимна повратна информација</b> за искуството на клиентот со цел континуирано подобрување на услугата",
     "description": "",
     "image": {
-      "src": "assets/images/4 - feedback.webp",
-      "title": "Test"
+      "src": "assets/images/4 - feedback.webp"
     }
   }
 ]

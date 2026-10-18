@@ -1,21 +1,20 @@
-<div class="carousel">
-  <p-button class="carousel-actions" icon="pi pi-angle-left" [rounded]="true" (onClick)="next()" />
-
-  <div class="carousel-container">
-    <img [src]="images()[currentIndex]" loading="lazy" decoding="async" alt="Carousel image" class="carousel-image" />
-  </div>
-
-  <p-button class="carousel-actions" icon="pi pi-angle-right" [rounded]="true" (onClick)="prev()" />
-</div>
-
-<div class="dots-container">
-  <p-button icon="pi pi-angle-left" [rounded]="true" (onClick)="next()" />
-  @for (item of images(); track item; let i = $index) {
-    <span
-      (click)="goToSlide(i)"
-      [class.active]="i === currentIndex"
-      class="dot"
-    ></span>
-  }
-  <p-button icon="pi pi-angle-right" [rounded]="true" (onClick)="prev()" />
-</div>
+<p-carousel
+  [value]="images()"
+  [numVisible]="1"
+  [numScroll]="1"
+  [circular]="true"
+  [showIndicators]="true"
+  [showNavigators]="true"
+>
+  <ng-template pTemplate="item" let-image>
+    <div class="carousel-item">
+      <img
+        [src]="image"
+        loading="eager"
+        decoding="async"
+        alt="Carousel image"
+        class="carousel-image"
+      />
+    </div>
+  </ng-template>
+</p-carousel>
