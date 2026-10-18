@@ -74,6 +74,7 @@ export class MainPageComponent {
     'assets/images/3 - diploma.webp',
     'assets/images/4 - diploma.webp',
     'assets/images/5 - diploma.webp',
+    'assets/images/6 - diploma.webp',
   ];
 
   protected readonly window = window;

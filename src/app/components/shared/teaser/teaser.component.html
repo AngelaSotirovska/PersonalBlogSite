@@ -1,7 +1,5 @@
-<div
-  class="teaser-card"
-  [style.background-image]="'url(' + image().src + ')'"
->
+<div class="teaser-card">
+  <img class="teaser-card__image" [src]="image().src" [alt]="title()" loading="lazy" decoding="async" />
   <div class="overlay">
     <h3>{{ title() }}</h3>
     <p>{{ description() }}</p>

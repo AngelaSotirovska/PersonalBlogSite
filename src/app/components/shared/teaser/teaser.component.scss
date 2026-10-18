@@ -4,8 +4,6 @@
   .teaser-card {
     position: relative;
     height: 270px;
-    background-size: cover;
-    background-position: center;
     border-radius: 6px;
     overflow: hidden;
 
@@ -15,6 +13,15 @@
 
     @media (min-width: $breakpoint-lg) {
       height: 420px;
+    }
+
+    &__image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
     }
 
     .overlay {

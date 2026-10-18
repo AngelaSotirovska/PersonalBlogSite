@@ -2,7 +2,12 @@
 <main>
   <section class="hero">
     <div class="hero__image">
-      <img src="../assets/images/hero-image.webp" alt="Personal image"/>
+      <img
+        src="assets/images/hero-image1.webp"
+        alt="Personal image"
+        decoding="async"
+        fetchpriority="high"
+      />
     </div>
     <div class="section__text">
       @for (paragraph of intro()?.description;  track $index) {
